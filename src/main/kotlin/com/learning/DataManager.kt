@@ -30,11 +30,15 @@ class DataManager {
         return foundbook
     }
 
-    fun deleteBook(book: Book): Book?{
+    fun deleteBook(bookid: String): Book{
         val bookfound = books.find{
-            it.id === book.id
+            it.id === bookid
         }
         books.remove(bookfound)
-        return bookfound
+        return bookfound!!
+    }
+
+    fun allBooks(): List<Book>{
+        return books
     }
 }
